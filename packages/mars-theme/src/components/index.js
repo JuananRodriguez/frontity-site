@@ -5,8 +5,10 @@ import Header from "./header";
 import List from "./list";
 import Post from "./post";
 import Loading from "./loading";
+import Page from "./page";
 import Title from "./title";
 import PageError from "./page-error";
+import HighlightStyle from 'highlight.js/styles/androidstudio.css';
 
 /**
  * Theme is the root React component of our theme. The one we will export
@@ -27,6 +29,7 @@ const Theme = ({ state }) => {
 
       {/* Add some global styles for the whole site, like body or a's. 
       Not classes here because we use CSS-in-JS. Only global HTML tags. */}
+      <Global styles={css(HighlightStyle)} />
       <Global styles={globalStyles} />
 
       {/* Add the header of the site. */}
@@ -36,9 +39,12 @@ const Theme = ({ state }) => {
 
       {/* Add the main section. It renders a different component depending
       on the type of URL we are in. */}
+
+
       <Main>
         <Switch>
           <Loading when={data.isFetching} />
+          <Page when={data.isPage}/>
           <List when={data.isArchive} />
           <Post when={data.isPostType} />
           <PageError when={data.isError} />
@@ -72,10 +78,7 @@ const HeadContainer = styled.div`
 
 const Main = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  background-image: linear-gradient(
-    180deg,
-    rgba(66, 174, 228, 0.1),
-    rgba(66, 174, 228, 0)
-  );
+  overflow-x: hidden;
 `;

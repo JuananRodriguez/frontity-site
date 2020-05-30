@@ -2,6 +2,13 @@ import Theme from "./components";
 import image from "@frontity/html2react/processors/image";
 import iframe from "@frontity/html2react/processors/iframe";
 
+// Gutenberg Processors
+import columns from "./Gutenberg/Columns/processor";
+import blockquote from "./Gutenberg/Blockquote/processor";
+import spacer from "./Gutenberg/Spacer/processor";
+import imageGutenberg from "./Gutenberg/Image/processor";
+import code from "./Gutenberg/Code/processor";
+
 const marsTheme = {
   name: "@frontity/mars-theme",
   roots: {
@@ -45,7 +52,16 @@ const marsTheme = {
        * Add a processor to `html2react` so it processes the `<img>` tags
        * inside the content HTML. You can add your own processors too
        */
-      processors: [image, iframe],
+      processors:
+        [
+          image,
+          iframe,
+          columns,
+          blockquote,
+          spacer,
+          imageGutenberg,
+          code
+        ],
     },
   },
 };
