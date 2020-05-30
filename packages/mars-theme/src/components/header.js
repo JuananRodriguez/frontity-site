@@ -10,6 +10,7 @@ const Header = ({ state }) => {
       <Container>
         <StyledLink link="/">
           <Title>{state.frontity.title}</Title>
+          <p>Probando CI con vercel</p>
         </StyledLink>
         <Description>{state.frontity.description}</Description>
         <MobileMenu />
