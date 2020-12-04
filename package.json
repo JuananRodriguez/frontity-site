@@ -20,6 +20,6 @@
     "@frontity/wp-source": "^1.7.1",
     "classnames": "^2.2.6",
     "frontity": "^1.7.0",
-    "highlight.js": "^10.0.3"
+    "highlight.js": "^10.4.1"
   }
 }
